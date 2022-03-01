@@ -13,15 +13,17 @@ const addCarrito = (indiceDelArrayProducto) => {
         productoAgregar.cantidad = 1;
         carrito.push(productoAgregar);
         leerCarrito();
+        actualizarStorage(carrito);
     } else {
         carrito[indiceEncontrado].cantidad += 1;
         actualizarStorage(carrito);
         leerCarrito();
     }
+    $("#cartelCarrito").fadeIn(2000, function(){$("#cartelCarrito").fadeOut()});
 };
-    let carritoContainer = document.getElementById("collapseExample");
+let carritoContainer = document.getElementById("collapseExample");
 
-    const leerCarrito = () => {
+const leerCarrito = () => {
     carritoContainer.innerHTML = "";
     if (carrito.length > 0) {
         carrito.forEach((producto, indice) => {
@@ -51,11 +53,10 @@ const addCarrito = (indiceDelArrayProducto) => {
         carritoContainer.appendChild(totalContainer);
     }else{
         let carrito = document.createElement("div");
-            carrito.className = "producto-carrito";
-            carrito.innerHTML = 
-                `<p style="color:#b99d9a">Agrega productos a tu carrito!</<p>`;
-            carritoContainer.appendChild(carrito);
-
+        carrito.className = "producto-carrito";
+        carrito.innerHTML = 
+            `<p style="color:#b99d9a">Agrega productos a tu carrito!</<p>`;
+        carritoContainer.appendChild(carrito);
     }
 }
 

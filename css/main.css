@@ -96,6 +96,11 @@ ul {
   background-color: #b99d9a;
   border: none; }
 
+#btn-carrito-delete {
+  background-color: #f56352;
+  border: none;
+  margin: 5px; }
+
 #carritoLista {
   display: flex;
   flex-direction: row;
@@ -105,9 +110,24 @@ ul {
   align-items: center; }
 
 #barra {
-  display: flex; }
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center; }
+
+.navbar-toggler-icon {
+  align-content: center;
+  align-items: center; }
 
 #botonCarrito {
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 4px 12px 4px 12px !important;
   background-color: rgba(255, 255, 255, 0.548);
   border-color: #49392f;
   color: #49392f;
@@ -280,10 +300,15 @@ footer {
 
 .articulos {
   height: fit-content;
-  margin: auto; }
+  margin: auto;
+  border: 90px;
+  border-color: #49392f; }
+
+.card {
+  height: fit-content; }
 
 .card-img-top {
-  margin: 10px 0px 0px 0px; }
+  margin: 0px 0px 0px 0px; }
 
 .Marina {
   display: flex;
@@ -311,11 +336,11 @@ footer {
 
 .intro {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   height: 60vh;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.609); }
+  background-color: rgba(0, 0, 0, 0.609);
+  margin: 0px; }
   .intro h2 {
     color: #e0e0e0; }
   .intro input {
@@ -633,7 +658,7 @@ nav {
   padding: 0px; }
 
 .card {
-  border-style: none; }
+  padding: 20px; }
   .card .mb-3 {
     width: 100vw;
     align-items: center;
@@ -659,17 +684,18 @@ nav {
   .form-inline .form-control {
     width: 30vw; }
 
+#articuloHoverModal :hover {
+  cursor: pointer; }
+
 /* *************RESPOSIVE CSS**************/
 @media only screen and (min-width: 1px) {
   #collapseExample {
-    z-index: 1000;
-    float: left;
+    z-index: 100;
     background-color: rgba(0, 0, 0, 0.787);
     width: auto;
-    position: absolute;
     padding: 10px;
-    border-radius: 10px;
-    top: 45px; }
+    top: 45px;
+    margin: 0px; }
     #collapseExample .articulos .card {
       display: flex;
       margin: 3px;
@@ -685,6 +711,8 @@ nav {
       #collapseExample .articulos .card a {
         padding: 0px;
         min-width: max-content; }
+  .card-title {
+    margin: 2px; }
   .nav {
     width: 100vw; }
   .img-fluid {
@@ -707,7 +735,7 @@ nav {
   h2 {
     font-size: 25px; }
   .chicos .card {
-    width: 100px;
+    width: 150px;
     height: auto;
     margin: 20px; }
   .card img {
@@ -746,13 +774,11 @@ nav {
 
 @media only screen and (min-width: 768px) {
   #collapseExample {
-    z-index: 1000;
-    float: left;
+    z-index: 100;
     background-color: rgba(0, 0, 0, 0.787);
     width: auto;
-    position: absolute;
     padding: 10px;
-    border-radius: 10px;
+    margin: 0px;
     top: 67,5px; }
     #collapseExample .articulos .card {
       display: flex;
@@ -769,6 +795,8 @@ nav {
       #collapseExample .articulos .card a {
         padding: 0px;
         min-width: max-content; }
+  .card-title {
+    margin: 2px; }
   .nav {
     width: 100vw; }
   .animate__animated {
@@ -786,7 +814,7 @@ nav {
   h2 {
     font-size: 37.5px; }
   .chicos .card {
-    width: 150px;
+    width: 200px;
     height: auto; }
   .card img {
     width: 150px;
@@ -812,13 +840,10 @@ nav {
 
 @media only screen and (min-width: 1024px) {
   #collapseExample {
-    z-index: 1000;
-    float: left;
     background-color: rgba(0, 0, 0, 0.787);
     width: auto;
-    position: absolute;
+    margin: 0px;
     padding: 10px;
-    border-radius: 10px;
     top: 75px; }
     #collapseExample .articulos .card {
       display: flex;
@@ -835,6 +860,8 @@ nav {
       #collapseExample .articulos .card a {
         padding: 0px;
         min-width: max-content; }
+  .card-title {
+    margin: 2px; }
   .nav {
     width: 100vw; }
   .animate__animated {
@@ -852,10 +879,12 @@ nav {
   h2 {
     font-size: 56.25px; }
   .chicos .card {
-    width: 225px;
-    height: auto; }
+    width: 260px;
+    height: auto;
+    border: 90px !important;
+    border-color: #49392f !important; }
   .card img {
-    width: 225px;
+    width: 220px;
     border-radius: 6.75px; }
   .card-body {
     padding: 3px;
@@ -871,6 +900,45 @@ nav {
   .card-text {
     padding-bottom: 2px;
     margin: 0px; } }
+
+.modal-content {
+  display: flex;
+  align-content: center;
+  align-items: center; }
+  .modal-content .modal-body {
+    padding: 0px 10px 30px 10px; }
+  .modal-content .card {
+    align-items: center;
+    padding: 0px 0px 30px 0px;
+    margin: 0px 0px 30px 0px;
+    border: none;
+    width: fit-content; }
+    .modal-content .card img {
+      width: 300px;
+      height: 300px; }
+    .modal-content .card .card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+    .modal-content .card #title {
+      font-size: 30px; }
+    .modal-content .card #textDesc {
+      text-align: center; }
+  .modal-content .btn-secondary {
+    height: 40px;
+    padding: 5px;
+    align-items: center;
+    width: 60px;
+    background-color: #fa6262;
+    border: none; }
+  .modal-content .btn-primary {
+    height: 40px;
+    padding: 5px;
+    align-items: center;
+    width: 150px; }
+  .modal-content #textPrecio {
+    font-size: 30px;
+    float: right; }
 
 /*********************PARA LA TERMINAL*****************
 /*

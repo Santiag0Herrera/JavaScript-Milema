@@ -1,5 +1,4 @@
 //ANIMACIONES
-
 $("#top").slideDown("slow");
 $("#fotoPrincipal").slideDown("slow");
 $("#topAdm").slideDown("slow");
